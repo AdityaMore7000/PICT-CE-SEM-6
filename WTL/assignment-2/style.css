@@ -1,0 +1,12 @@
+.profile-img{
+    border-radius: 100%;
+    width: 10em;
+}
+.flex-container{
+    padding: 10px;
+    display:flex;
+    gap:2em;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom:2px solid black;
+}
