@@ -8,5 +8,9 @@
     gap:2em;
     justify-content: space-between;
     align-items: center;
-    border-bottom:2px solid black;
+    border-bottom:2px solid white;
+}
+
+#intro h2{
+    padding:10px;
 }
