@@ -8,5 +8,5 @@ function handleSubmit(e){
     e.preventDefault();
 }
 
-const form = document.querySelector('#form')
+const form = document.getElementById('form')
 form.addEventListener('submit',handleSubmit)
