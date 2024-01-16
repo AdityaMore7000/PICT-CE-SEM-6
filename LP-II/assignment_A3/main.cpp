@@ -11,7 +11,6 @@ void printArray(vi &a)
 }
 void primsAlgorithm()
 {
-    cout << "Wukong is the greatest!!!\n";
     return;
 }
 void selectionSort()
