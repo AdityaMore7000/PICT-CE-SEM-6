@@ -1,9 +1,8 @@
 #include <bits/stdc++.h>
 #define vi vector<int>
-#define V 5
 using namespace std;
-
-int minKey(int key[], bool mstSet[])
+#define V 100
+int minKey(vector<int> &key, vector<bool> &mstSet)
 {
     // Initialize min value
     int min = INT_MAX, min_index;
@@ -15,7 +14,7 @@ int minKey(int key[], bool mstSet[])
     return min_index;
 }
 
-void printMST(int parent[], int graph[V][V])
+void printMST(vector<int> &parent, vector<vector<int>> &graph)
 {
     cout << "Edge \tWeight\n";
     for (int i = 1; i < V; i++)
@@ -32,20 +31,20 @@ void printArray(vi &a)
     cout << '\n';
 }
 
-void primMST(int graph[V][V])
+void primMST(vector<vector<int>> &graph)
 {
-    int parent[V];
-    int key[V];
-    bool mstSet[V];
-    for (int i = 0; i < V; i++)
+    vector<int> parent;
+    vi key;
+    vector<bool> mstSet;
+    for (int i = 0; i < graph.size(); i++)
         key[i] = INT_MAX, mstSet[i] = false;
     key[0] = 0;
     parent[0] = -1;
-    for (int count = 0; count < V - 1; count++)
+    for (int count = 0; count < graph.size() - 1; count++)
     {
         int u = minKey(key, mstSet);
         mstSet[u] = true;
-        for (int v = 0; v < V; v++)
+        for (int v = 0; v < graph.size(); v++)
             if (graph[u][v] && mstSet[v] == false && graph[u][v] < key[v])
                 parent[v] = u, key[v] = graph[u][v];
     }
@@ -54,11 +53,22 @@ void primMST(int graph[V][V])
 
 void primsAlgorithm()
 {
-    int graph[V][V] = {{0, 2, 0, 6, 0},
-                       {2, 0, 3, 8, 5},
-                       {0, 3, 0, 0, 7},
-                       {6, 8, 0, 0, 9},
-                       {0, 5, 7, 9, 0}};
+    int K;
+    // int graph[V][V] = {{0, 2, 0, 6, 0},
+    //                    {2, 0, 3, 8, 5},
+    //                    {0, 3, 0, 0, 7},
+    //                    {6, 8, 0, 0, 9},
+    //                    {0, 5, 7, 9, 0}};
+            cout << "Enter the number of vertices: ";
+            cin >> K;
+
+            cout << "Enter the adjacency matrix:\n";
+            vector<vector<int>> graph(K, vector<int>(K));
+            for (int i = 0; i < K; i++) {
+                for (int j = 0; j < K; j++) {
+                    cin >> graph[i][j];
+                }
+            }
     primMST(graph);
     return;
 }
@@ -90,8 +100,10 @@ void selectionSort()
         {
             swap(a[i], a[min]);
         }
+        cout<<"\nArray after "<<"pass:"<<i+1<<'\n';
+        printArray(a);
     }
-    cout << "Array after sorting:\n";
+    cout << "\nArray after sorting:\n";
     printArray(a);
     return;
 }
