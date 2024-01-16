@@ -56,12 +56,7 @@ int main()
     g.addEdge(0, 1);
     g.addEdge(1, 3);
     g.addEdge(1, 2);
-    // g.addEdge(2, 0);
     g.addEdge(2, 4);
-    // g.addEdge(3, 3);
-
-    // cout << "Following is Depth First Traversal,"
-    //         " (starting from vertex 2) \n";
     cout<<"Enter 1 for DFS and 2 for BFS: ";
     int choice;
     cin>>choice;
