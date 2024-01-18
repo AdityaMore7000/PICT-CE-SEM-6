@@ -1,0 +1,28 @@
+{
+  "questions": [
+    {
+      "question": "hello",
+      "answer": "Hi There"
+    },
+    {
+      "question": "how are you?",
+      "answer": "I'm fine, how can I help you?"
+    },
+    {
+      "question": "hi",
+      "answer": "hello there"
+    },
+    {
+      "question": "hi again",
+      "answer": "hello again"
+    },
+    {
+      "question": "hey",
+      "answer": "hey there"
+    },
+    {
+      "question": "What is your name?",
+      "answer": "I am GPT 5"
+    }
+  ]
+}
