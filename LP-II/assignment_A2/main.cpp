@@ -106,6 +106,7 @@ vector<Node *> aStar(vector<vector<Node>> &grid, Node *start, Node *end)
 
 void displayGrid(const vector<vector<Node>> &grid)
 {
+    vector<Node> obstacles;
     for (const auto &row : grid)
     {
         for (const auto &node : row)
@@ -113,6 +114,7 @@ void displayGrid(const vector<vector<Node>> &grid)
             if (node.obstacle)
             {
                 cout << "0 ";
+                obstacles.push_back(node);
             }
             else
             {
@@ -121,6 +123,11 @@ void displayGrid(const vector<vector<Node>> &grid)
         }
         cout << '\n';
     }
+    cout<<'\n';
+    for(auto &node: obstacles){
+        cout << "Obstacle at: (" << node.x << ", " << node.y << ")\n";
+    }
+    cout<<'\n';
 }
 
 int main()
